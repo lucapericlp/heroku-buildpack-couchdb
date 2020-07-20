@@ -2,10 +2,10 @@
 
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
 
-FINAL_BUILD_DIR=$FINAL_BUILD_DIR
-CACHE_DIR=$CACHE_DIR
-BUILD_DIR=$CACHE_DIR/app
-ENV_DIR=$ENV_DIR
+ENV_DIR=/app/env
+BUILD_DIR=/app/build
+CACHE_DIR=/app/cache
+FINAL_BUILD_DIR=/app/final_build
 
 export_env_dir() {
   env_dir=$ENV_DIR
@@ -21,6 +21,7 @@ export_env_dir() {
 }
 
 echo $CACHE_DIR
+echo "HI"
 export_env_dir
 
 if [ ! -e $CACHE_DIR ]; then

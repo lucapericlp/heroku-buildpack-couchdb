@@ -6,10 +6,6 @@ addons: []
 config_vars:
   PATH: /usr/local/bin:/usr/bin:/bin:/app/usr/local/bin:/app/bin:/app/usr/bin/:/app/usr/sbin:/app/otp/bin:bin:/usr/bin:/bin
   LD_LIBRARY_PATH: /app/usr/lib/
-  ENV_DIR: /app/env
-  BUILD_DIR: /app/build
-  CACHE_DIR: /app/cache
-  FINAL_BUILD_DIR: /app/final_build
 default_process_types:
   couchdb: sed -i "s/PORT/$PORT/" /app/etc/couchdb/local.ini && /app/etc/init.d/couchdb start
 EOF
