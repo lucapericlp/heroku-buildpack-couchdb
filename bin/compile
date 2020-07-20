@@ -2,10 +2,10 @@
 
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
 
-FINAL_BUILD_DIR=$1
-CACHE_DIR=$2
+FINAL_BUILD_DIR=$FINAL_BUILD_DIR
+CACHE_DIR=$CACHE_DIR
 BUILD_DIR=$CACHE_DIR/app
-ENV_DIR=$3
+ENV_DIR=$ENV_DIR
 
 export_env_dir() {
   env_dir=$ENV_DIR
@@ -20,6 +20,7 @@ export_env_dir() {
   fi
 }
 
+echo $CACHE_DIR
 export_env_dir
 
 if [ ! -e $CACHE_DIR ]; then
@@ -139,7 +140,7 @@ echo "-----> Setting port to $PORT"
 # change port and bind_address where openshift expects DIY apps to serve
 cat > $BUILD_DIR/etc/couchdb/local.ini << EOM
 [httpd]
-port = PORT
+port = 5984
 bind_address = "0.0.0.0"
 
 [log]
