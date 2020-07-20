@@ -136,7 +136,7 @@ COUCHDB_RESPAWN_TIMEOUT=5
 COUCHDB_OPTIONS=
 EOM
 
-echo "-----> Setting port to $PORT"
+echo "-----> Setting port to 5984"
 # change port and bind_address where openshift expects DIY apps to serve
 cat > $BUILD_DIR/etc/couchdb/local.ini << EOM
 [httpd]
